@@ -11,25 +11,38 @@
 <html>
 <head>
     <title>LIST</title>
+  <style type="text/css">
+    span,input {
+      width: 100px;
+    }
+    .inline {
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body>
 <h1>LIST</h1>
+
 <c:if test="${!empty teams}">
-  <table class="data">
-    <tr>
-      <th>id</th>
-      <th>name</th>
-    </tr>
+  <div class="data">
+    <div>
+      <span>id</span>
+      <span>name</span>
+    </div>
     <c:forEach items="${teams}" var="team">
-      <tr>
-        <td>${team.id}</td>
-        <td>${team.name}</td>
-        <td><a href="delete/${team.id}">delete</a></td>
-      </tr>
+      <div>
+        <form action="/admin/update" method="post">
+        <input type="text" name="id" value="${team.id}" readonly/>
+        <input type="text" name="name" value="${team.name}" />
+        <a href="delete/${team.id}">delete</a>
+        <input type="submit" value="update">
+        </form>
+      </div>
     </c:forEach>
-  </table>
+  </div>
 </c:if>
+
 <form  method="POST" action="/admin/add">
   <table>
     <tr>

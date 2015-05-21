@@ -4,11 +4,8 @@
     </head>
     <body>
         <h1>Admin</h1>
-        <p>Hello, ${userDetails.username}!</p>
-
-        <p>User authorities: ${userAuthorities}</p>
         <p>
-            <a href="/admin/show">List</a>
+            <a href="/admin/show">Teams List</a>
         </p>
         <a href="/">Back</a>
     </body>
