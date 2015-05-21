@@ -11,4 +11,6 @@ public interface TeamDAO {
     public List<Team> listTeam();
 
     public void removeTeam(Integer id);
+
+    public void updateTeam(Team Team);
 }

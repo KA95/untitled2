@@ -20,6 +20,11 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Transactional
+    public void updateTeam(Team Team) {
+        TeamDAO.updateTeam(Team);
+    }
+
+    @Transactional
     public List<Team> listTeam() {
 
         return TeamDAO.listTeam();

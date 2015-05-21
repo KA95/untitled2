@@ -31,4 +31,10 @@ public class TeamDAOImpl implements TeamDAO {
             sessionFactory.getCurrentSession().delete(Team);
         }
     }
+
+    public void updateTeam(Team Team) {
+        if (null != Team) {
+            sessionFactory.getCurrentSession().update(Team);
+        }
+    }
 }
