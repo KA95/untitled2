@@ -7,7 +7,9 @@
         <p>Hello, ${userDetails.username}!</p>
 
         <p>User authorities: ${userAuthorities}</p>
-
+        <p>
+            <a href="/admin/show">List</a>
+        </p>
         <a href="/">Back</a>
     </body>
 </html>

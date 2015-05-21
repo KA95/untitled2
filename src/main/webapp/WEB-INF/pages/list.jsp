@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
@@ -29,5 +30,16 @@
     </c:forEach>
   </table>
 </c:if>
+<form  method="POST" action="/admin/add">
+  <table>
+    <tr>
+      <td>Type team name:</td>
+      <td><input type="text" name="name"/></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"><input type="submit" value="Add"/></td>
+    </tr>
+  </table>
+</form>
 </body>
 </html>

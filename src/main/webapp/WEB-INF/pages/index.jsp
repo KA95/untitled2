@@ -25,9 +25,6 @@
                 <p>
                     <a href="/admin">Admin page</a>
                 </p>
-                <p>
-                    <a href="/show">List</a>
-                </p>
             </sec:authorize>
         </div>
     </body>
