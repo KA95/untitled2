@@ -1,5 +1,6 @@
 package com.springapp.controller;
 
+import com.springapp.domain.Submission;
 import com.springapp.service.PrintingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -8,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,10 +42,14 @@ public class ApplicationController {
     }
 
     @RequestMapping(value = "/print", method = RequestMethod.POST)
-    public String print(ModelMap map) {
+    public String print(@ModelAttribute("Submission") Submission submission,
+                        ModelMap map) {
         String printerName= "Bullzip PDF Printer";
+        System.out.println(submission.getId());
+        System.out.println(submission.getText());
 
-//        printingService.printText(textLines, printerName);
+        map.addAttribute("submission",submission);
+        printingService.printText(submission.getText(), printerName);
         return "print_result";
     }
 }

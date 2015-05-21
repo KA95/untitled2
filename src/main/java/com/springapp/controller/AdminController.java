@@ -54,8 +54,7 @@ public class AdminController {
 
     @RequestMapping("/delete/{TeamId}")
     public String deleteTeam(@PathVariable("TeamId") Integer TeamId) {
-
         teamService.removeTeam(TeamId);
-        return "redirect:show";
+        return "redirect:../show";
     }
 }
