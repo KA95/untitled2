@@ -1,22 +1,23 @@
 package com.springapp.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "TEAMS")
+@Table(name = "team")
 public class Team {
 
     @Id
-    @Column(name = "ID")
-    @GeneratedValue
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "NAME")
+    @Column(name = "name",unique = true)
     private String name;
+
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "team")
+    private List<Submission> submissions;
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -24,6 +25,10 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSubmissions(List<Submission> submissions) {
+        this.submissions = submissions;
     }
 
     public String getName() {
@@ -34,5 +39,9 @@ public class Team {
         return id;
     }
 
-    // Getters and setters
+    public List<Submission> getSubmissions() {
+        return this.submissions;
+    }
+
+    public Integer getSubmissionsCount(){ return submissions.size();}
 }

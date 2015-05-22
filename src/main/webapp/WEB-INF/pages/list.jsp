@@ -14,6 +14,7 @@
   <style type="text/css">
     span,input {
       width: 100px;
+      display: inline-block;
     }
     .inline {
       display: inline-block;
@@ -29,14 +30,16 @@
     <div>
       <span>id</span>
       <span>name</span>
+      <span>submissions</span>
     </div>
     <c:forEach items="${teams}" var="team">
       <div>
         <form action="/admin/update" method="post">
-        <input type="text" name="id" value="${team.id}" readonly/>
-        <input type="text" name="name" value="${team.name}" />
-        <a href="delete/${team.id}">delete</a>
-        <input type="submit" value="update">
+          <input type="text" name="id" value="${team.id}" readonly/>
+          <input type="text" name="name" value="${team.name}" />
+          <input type="text" value="${team.submissionsCount}" readonly/>
+          <a href="delete/${team.id}">delete</a>
+          <input type="submit" value="update">
         </form>
       </div>
     </c:forEach>

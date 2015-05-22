@@ -21,12 +21,10 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <!-- Настройки бина dataSource будем хранить в отдельном файле -->
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="/WEB-INF/jdbc.properties" />
 
-    <!-- Непосредственно бин dataSource -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="${jdbc.driverClassName}"
@@ -34,7 +32,6 @@
           p:username="${jdbc.username}"
           p:password="${jdbc.password}" />
 
-    <!-- Настройки фабрики сессий Хибернейта -->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />

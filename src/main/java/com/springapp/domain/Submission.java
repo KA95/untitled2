@@ -1,13 +1,27 @@
 package com.springapp.domain;
 
+import javax.persistence.*;
+
 /**
- * Created by Lenovo on 21.05.2015.
- */
+* Created by Lenovo on 21.05.2015.
+*/
+
+@Entity
+@Table(name = "submission")
 public class Submission {
 
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Column(name = "text")
     private String text;
-    private Team Team;
+
+    @ManyToOne(targetEntity = Team.class)
+    @JoinColumn(name="team_id")
+    private Team team;
+
 
     public Integer getId() {
         return id;
@@ -26,10 +40,10 @@ public class Submission {
     }
 
     public Team getTeam() {
-        return Team;
+        return team;
     }
 
     public void setTeam(Team team) {
-        Team = team;
+        this.team = team;
     }
 }

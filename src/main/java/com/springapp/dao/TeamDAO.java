@@ -1,16 +1,11 @@
 package com.springapp.dao;
 
 import com.springapp.domain.Team;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface TeamDAO {
-
-    public void addTeam(Team contact);
-
-    public List<Team> listTeam();
-
-    public void removeTeam(Integer id);
-
-    public void updateTeam(Team Team);
+@Repository
+public class TeamDAO extends DAO<Team> {
+    public TeamDAO() {
+        super(Team.class);
+    }
 }
