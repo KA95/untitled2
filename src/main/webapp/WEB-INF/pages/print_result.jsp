@@ -14,6 +14,6 @@
 <body>
 <p>your submission id: ${submission.id}</p>
 <p>your team: ${submission.team.name}</p>
-<p><textarea rows="50" cols="30" readonly>${submission.text}</textarea></p>
+<p><textarea rows="80" cols="80" readonly>${submission.text}</textarea></p>
 </body>
 </html>

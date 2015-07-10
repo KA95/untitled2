@@ -1,5 +1,7 @@
 package com.springapp.domain;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class Team {
     @Column(name = "name",unique = true)
     private String name;
 
-    @OneToMany(fetch=FetchType.EAGER, mappedBy = "team")
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "team", cascade = CascadeType.REMOVE)
     private List<Submission> submissions;
 
 

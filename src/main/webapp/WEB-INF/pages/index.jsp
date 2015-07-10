@@ -20,7 +20,9 @@
                     <a href="/logout">Log Out</a>
                 </p>
             </sec:authorize>
-
+            <p>
+                <a href="/print">Print</a>
+            </p>
             <sec:authorize access="hasRole('ROLE_ADMINISTRATOR')">
                 <p>
                     <a href="/admin">Admin page</a>

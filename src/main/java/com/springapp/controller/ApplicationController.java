@@ -54,8 +54,8 @@ public class ApplicationController {
     public String print(@ModelAttribute("SubmissionView") SubmissionView submissionView,
                         ModelMap map) {
 
-        String printerName= "Bullzip PDF Printer";
-
+        String printerName = "Bullzip PDF Printer";
+//        String printerName = "Отправить в OneNote 2013";
         Submission submission = new Submission();
         submission.setText(submissionView.getText());
         Team team = teamService.getTeam(submissionView.getTeamId());

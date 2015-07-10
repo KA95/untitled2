@@ -35,9 +35,10 @@
     <c:forEach items="${teams}" var="team">
       <div>
         <form action="/admin/update" method="post">
-          <input type="text" name="id" value="${team.id}" readonly/>
+          <span>${team.id}</span>
+          <input type="hidden" name="id" value="${team.id}" readonly/>
           <input type="text" name="name" value="${team.name}" />
-          <input type="text" value="${team.submissionsCount}" readonly/>
+          <span>${team.submissionsCount}</span>
           <a href="delete/${team.id}">delete</a>
           <input type="submit" value="update">
         </form>

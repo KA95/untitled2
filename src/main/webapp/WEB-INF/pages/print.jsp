@@ -14,8 +14,8 @@
 <h1>PRINT</h1>
 
 <form action="/print" method="post">
-  <p>Id: <input type="text" name="teamId" /></p>
-  <p>Message: <textarea rows="80" cols="100" name="text" wrap="hard"></textarea></p>
+  <p>Team id: <input type="text" name="teamId" /></p>
+  <p style="vertical-align: top">Source: <textarea rows="80" cols="80" name="text" wrap="hard"></textarea></p>
   <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 
